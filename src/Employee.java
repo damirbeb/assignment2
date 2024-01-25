@@ -24,4 +24,7 @@ public class Employee extends Person{
         this.salary = salary;
     }
 
+    public double getPaymentAmount(){
+        return salary;
+    }
 }

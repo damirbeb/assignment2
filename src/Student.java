@@ -13,11 +13,11 @@ public class Student extends Person{
     public double getGpa(){
         return gpa;
     }
-    public void setGpa(){
+    public void setGpa(double gpa){
         this.gpa = gpa;
     }
 
-    public double hetPaymentAmount(){
+    public double getPaymentAmount(){
         return (gpa > 2.67) ? 36660 : 0;
     }
     @Override

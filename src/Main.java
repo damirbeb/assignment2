@@ -8,7 +8,8 @@ public class Main {
         System.out.println("Welcome! What do you want to do? (Choose number)");
         System.out.println("1. Add student");
         System.out.println("2. Add employee");
-        System.out.println("3. See result");
+        System.out.println("3. See people");
+        System.out.println("4. Break");
         System.out.print("Here: ");
     }
     public static void main(String[] args) {
@@ -29,6 +30,8 @@ public class Main {
             case 3:
                 Collections.sort(people);
                 outList(people);
+                break;
+            case 4:
                 break;
             default:
                 System.out.println("Try again");
