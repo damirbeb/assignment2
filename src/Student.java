@@ -1,15 +1,13 @@
 public class Student extends Person{
     private double gpa;
 
-    public Student(){
-        super();
-    }
-
+    //Constructor
     public Student(String name, String surname, double gpa){
         super(name, surname);
         this.gpa = gpa;
     }
 
+    //Getters and setters
     public double getGpa(){
         return gpa;
     }
@@ -17,6 +15,7 @@ public class Student extends Person{
         this.gpa = gpa;
     }
 
+    //Payment based on GPA
     public double getPaymentAmount(){
         return (gpa > 2.67) ? 36660 : 0;
     }

@@ -1,4 +1,5 @@
 public abstract class Person implements Payable, Comparable<Person> {
+    //Creating an id
     private static int idCount;
     static {
         idCount = 1;
@@ -14,12 +15,15 @@ public abstract class Person implements Payable, Comparable<Person> {
     public int compareTo(Person other) {
         return Double.compare(this.getPaymentAmount(), other.getPaymentAmount());
     }
+
+    //Constructor
     public Person(String name, String surname){
         this();
         setName(name);
         setSurname(surname);
     }
 
+    //Getters and setters
     public int getID(){
         return id;
     }
@@ -36,6 +40,7 @@ public abstract class Person implements Payable, Comparable<Person> {
         this.surname = surname;
     }
 
+    //Represents a person
     @Override
     public String toString(){
         return getPosition() + ": " + id + ". " + name + " " + surname;
