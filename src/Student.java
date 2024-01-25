@@ -4,7 +4,7 @@ public class Student extends Person{
     //Constructor
     public Student(String name, String surname, double gpa){
         super(name, surname);
-        this.gpa = gpa;
+        setGpa(gpa);
     }
 
     //Getters and setters
@@ -18,7 +18,7 @@ public class Student extends Person{
     //Payment based on GPA
     @Override
     public double getPaymentAmount(){
-        return (gpa > 2.67) ? 36660 : 0;
+        return (getGpa() > 2.67) ? 36660 : 0;
     }
     @Override
     public String getPosition(){

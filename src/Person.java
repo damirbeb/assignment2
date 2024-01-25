@@ -43,7 +43,7 @@ public abstract class Person implements Payable, Comparable<Person> {
     //Represents a person
     @Override
     public String toString(){
-        return getPosition() + ": " + id + ". " + name + " " + surname;
+        return getPosition() + ": " + getID() + ". " + getName() + " " + getSurname();
     }
     public abstract String getPosition();
 }

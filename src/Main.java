@@ -32,7 +32,7 @@ public class Main {
                     break;
                 case 3:
                     Collections.sort(people);
-                    outList(people);
+                    printData(people);
                 case 4:
                     break;
                 default:
@@ -75,7 +75,7 @@ public class Main {
     }
 
     //Iterates through array and prints people's info with their earnings
-    public static void outList(Iterable<Person> people){
+    public static void printData(Iterable<Person> people){
         for(Person person : people){
             System.out.println(person.toString() + " earns " + person.getPaymentAmount() + " tenge");
         }
