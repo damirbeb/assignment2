@@ -24,6 +24,7 @@ public class Employee extends Person{
     }
 
     //Earnings is salary
+    @Override
     public double getPaymentAmount(){
         return salary;
     }

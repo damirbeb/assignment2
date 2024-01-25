@@ -16,6 +16,7 @@ public class Student extends Person{
     }
 
     //Payment based on GPA
+    @Override
     public double getPaymentAmount(){
         return (gpa > 2.67) ? 36660 : 0;
     }
