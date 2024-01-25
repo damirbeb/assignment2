@@ -1,9 +1,7 @@
 public abstract class Person implements Payable, Comparable<Person> {
     //Creating an id
-    private static int idCount;
-    static {
-        idCount = 1;
-    }
+    private static int idCount = 1;
+
     private final int id;
     private String name;
     private String surname;
