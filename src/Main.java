@@ -18,27 +18,27 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int choice;
-        welcome();
-        choice = scanner.nextInt();
-
         //Switch case for menu options
-        switch(choice){
-            case 1:
-                addStudent(scanner, people);
-                break;
-            case 2:
-                addEmployee(scanner, people);
-                break;
-            case 3:
-                Collections.sort(people);
-                outList(people);
-                break;
-            case 4:
-                break;
-            default:
-                System.out.println("Try again");
-                break;
-        }
+        do{
+            welcome();
+            choice = scanner.nextInt();
+
+            switch(choice){
+                case 1:
+                    addStudent(scanner, people);
+                    break;
+                case 2:
+                    addEmployee(scanner, people);
+                    break;
+                case 3:
+                    Collections.sort(people);
+                    outList(people);
+                case 4:
+                    break;
+                default:
+                    System.out.println("Try again");
+            }
+        }while (choice != 4);
     }
 
     //Takes user input with student details (name, surname, GPA) and adds a new 'Student' object to array 'people'.
@@ -53,7 +53,7 @@ public class Main {
         double gpa = scanner.nextDouble();
 
         people.add(new Student(name, surname, gpa));
-        System.out.println("Added successfully!");
+        System.out.println("Added successfully!\n");
     }
 
     //Takes user input with employee details (name, surname, position, salary) and adds a new 'Employee' object to array 'people'.
@@ -71,7 +71,7 @@ public class Main {
         double salary = scanner.nextDouble();
 
         people.add(new Employee(name, surname, position, salary));
-        System.out.println("Added successfully!");
+        System.out.println("Added successfully!\n");
     }
 
     //Iterates through array and prints people's info with their earnings
@@ -79,5 +79,6 @@ public class Main {
         for(Person person : people){
             System.out.println(person.toString() + " earns " + person.getPaymentAmount() + " tenge");
         }
+        System.out.println("\n");
     }
 }
