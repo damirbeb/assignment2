@@ -1,13 +1,19 @@
-import java.util.Scanner;
-public abstract class Person {
-    protected static idCount;
-    static{
+public abstract class Person implements Payable, Comparable<Person> {
+    private static int idCount;
+    static {
         idCount = 1;
     }
-    protected int id;
-    protected String name;
-    protected String surname;
+    private final int id;
+    private String name;
+    private String surname;
 
+    public Person(){
+        this.id = idCount++;
+    }
+    @Override
+    public int compareTo(Person other) {
+        return Double.compare(this.getPaymentAmount(), other.getPaymentAmount());
+    }
     public Person(String name, String surname){
         this();
         setName(name);
@@ -26,13 +32,13 @@ public abstract class Person {
     public String getSurname(){
         return surname;
     }
-    public void setSurname(){
+    public void setSurname(String surname){
         this.surname = surname;
     }
 
     @Override
     public String toString(){
-        return getPosition() + ": " + id + ". " + name " " + surname;
+        return getPosition() + ": " + id + ". " + name + " " + surname;
     }
-    public abstract String getPosition()
+    public abstract String getPosition();
 }
